@@ -117,7 +117,7 @@
 
 
 (defreduce intersect-friends[ k v ]
-    [ k (vec (sort (apply clojure.set/intersection (map #(into #{} %) v)))) ])
+    [ k (vec (sort (apply clojure.set/intersection (map set v)))) ])
 
 (->>
   friends-input
