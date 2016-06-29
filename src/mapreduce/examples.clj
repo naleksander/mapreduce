@@ -66,7 +66,7 @@
 (defmap count-characters [k v]
         [[ v (.length v) ]])
 
-(defreduce emit-only-value [ k v]
+(defreduce emit-only-key [ k v]
          [ k ]  )
 
 
@@ -81,7 +81,7 @@
 
   data-input
 
-  (map-reduce count-characters emit-only-value sort-value-desc-then-key-asc))
+  (map-reduce count-characters emit-only-key sort-value-desc-then-key-asc))
 
 
 ; example 5

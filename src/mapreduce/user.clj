@@ -2,7 +2,7 @@
   (:use [mapreduce.core]))
 
 
-; some user defined identities
+; some user defined common functions
 
 (defcmp sort-identity [[k1 v1] [k2 v2]]
         (.compareTo k1 k2))
