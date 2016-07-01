@@ -113,11 +113,11 @@
 
 
 (defmap pair-friends[ k  v ]
-        (for [ vv v ] [ (vec (sort [k vv])) v ]))
+        (for [ vv v ] [ (vec (sort [k vv])) (set v) ]))
 
 
 (defreduce intersect-friends[ k v ]
-    [ k (vec (sort (apply clojure.set/intersection (map set v)))) ])
+    [ k (vec (sort (apply clojure.set/intersection v))) ])
 
 (->>
   friends-input
