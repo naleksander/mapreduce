@@ -66,8 +66,7 @@
 (defmap count-characters [k v]
         [[ v (.length v) ]])
 
-(defreduce emit-only-key [ k v]
-         [ k ]  )
+(defreduce emit-only-key [ k v] k )
 
 
 (defcmp sort-value-desc-then-key-asc
